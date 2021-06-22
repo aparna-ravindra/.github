@@ -1,5 +1,4 @@
 name: Aparna CI
- dummy text
 on:
   push:
     branches: [ $default-branch ]
@@ -8,10 +7,14 @@ on:
 
 jobs:
   build:
-    runs-on: custom-os
+    runs-on: linux
     
     steps:
     - uses: actions/checkout@v2
     
-    - name: Run a one-line script
-      run: echo Hello,World!
+    - name: Run validator
+      uses: aparna-ravindra/workflow-template-validator@v0.2
+        with:
+          path-to-workflow-yaml: './workflow-templates'
+          path-to-properties-json: './workflow-templates'
+          path-to-icons: './workflow-templates'
