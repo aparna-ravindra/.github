@@ -1,4 +1,4 @@
-name: Aparna CI Test
+name: Aparna CI Manual
 on:
   workflow_dispatch:
 
