@@ -1,4 +1,4 @@
-name: Aparna CI
+name: Aparna CI Test
 on:
   push:
     branches: [ main ]
@@ -9,9 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
     steps:
-    - uses: actions/checkout@v2
+    - name: checkout
+      uses: actions/checkout@v2
     - name: Setup Node
       uses: actions/setup-node@v2
     - name: Run validator
