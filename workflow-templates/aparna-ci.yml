@@ -1,4 +1,4 @@
-name: Aparna CI
+name: Aparna Validate This
 on:
   push:
     branches: [ $default-branch ]
@@ -7,14 +7,15 @@ on:
 
 jobs:
   build:
-    runs-on: linux
-    
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: Setup Node
+      uses: actions/setup-node@v2
     - name: Run validator
-      uses: aparna-ravindra/workflow-template-validator@v0.2
-        with:
-          path-to-workflow-yaml: './workflow-templates'
-          path-to-properties-json: './workflow-templates'
-          path-to-icons: './workflow-templates'
+      uses: aparna-ravindra/workflow-template-validator@v0.4
+      with:
+        path-to-workflow-yaml: './workflow-templates'
+        path-to-properties-json: './workflow-templates'
+        path-to-icons: './workflow-templates'
