@@ -1,5 +1,5 @@
 {
-    "name": "Labeler",
+    "name": "Personal Labeler",
     "description": "Labels pull requests based on the files changed",
     "iconName": "octicon tag",
     "categories": ["Automation", "SDLC"]
